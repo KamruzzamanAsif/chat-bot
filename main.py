@@ -42,7 +42,7 @@ if uploaded_file:
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     })
     if file_data["type"] == "image":
-        st.image(uploaded_file, caption=uploaded_file.name, use_column_width=True)
+        st.image(uploaded_file, caption=uploaded_file.name, use_container_width=True)
     else:
         st.text_area("File Content", file_data["content"], height=200)
 
@@ -104,4 +104,4 @@ if user_input:
 if st.button("Clear Conversation"):
     st.session_state.messages = []
     st.session_state.uploaded_files = []
-    st.experimental_rerun()
+    st.rerun()
